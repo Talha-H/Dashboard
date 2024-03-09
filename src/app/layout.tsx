@@ -28,9 +28,9 @@ export default function RootLayout({
         )}
       >
         {/* SideBar */}
-        <p className="border">
+        <div className="border">
           <SideBar />
-        </p>
+        </div>
         {/* Main Page */}
         <div className="p-8 w-full">{children}</div>
       </body>
