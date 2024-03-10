@@ -2,6 +2,7 @@ import Image from "next/image";
 import PageTitle from "@/components/PageTitle";
 import Card, { CardProps } from "@/components/Card";
 import { Activity, CreditCard, DollarSignIcon, User } from "lucide-react";
+import BarChart from "@/components/BarChart";
 
 const cardData: CardProps[] = [
   {
@@ -44,6 +45,12 @@ export default function Home() {
             key={index}
           />
         ))}
+      </section>
+      <section className="grid w-full grid-cols-1 lg:grid-cols-2 gap-x-8 gap-4 transition-all">
+        <div className="flex w-full rounded-xl flex-col gap-3 border p-5 shadow">
+          <p className="p-4 font-semibold">Overview</p>
+          <BarChart />
+        </div>
       </section>
     </div>
   );
