@@ -3,6 +3,7 @@ import PageTitle from "@/components/PageTitle";
 import Card, { CardProps } from "@/components/Card";
 import { Activity, CreditCard, DollarSignIcon, User } from "lucide-react";
 import BarChart from "@/components/BarChart";
+import Sales, { SalesProps } from "@/components/Sales";
 
 const cardData: CardProps[] = [
   {
@@ -30,6 +31,33 @@ const cardData: CardProps[] = [
     desc: "Description of item 4",
   },
 ];
+const UserSaleData: SalesProps[] = [
+  {
+    name: "John Doe",
+    email: "john.doe@example.com",
+    amount: "+$342.50",
+  },
+  {
+    name: "Jane Smith",
+    email: "jane.smith@example.com",
+    amount: "+$485.50",
+  },
+  {
+    name: "Alice Johnson",
+    email: "alice.johnson@example.com",
+    amount: "+$1992.50",
+  },
+  {
+    name: "Bob Brown",
+    email: "bob.brown@example.com",
+    amount: "+$862.00",
+  },
+  {
+    name: "Dely down",
+    email: "dely.down@example.com",
+    amount: "+$3262.00",
+  },
+];
 
 export default function Home() {
   return (
@@ -50,6 +78,22 @@ export default function Home() {
         <div className="flex w-full rounded-xl flex-col gap-3 border p-5 shadow">
           <p className="p-4 font-semibold">Overview</p>
           <BarChart />
+        </div>
+        <div className="flex w-full rounded-xl flex-col gap-3 border p-5 shadow justify-between">
+          <section>
+            <p>Recent Sales</p>
+            <p className="text-gray-400 text-sm">
+              You made 144 sale this month
+            </p>
+          </section>
+          {UserSaleData.map((ind, dat) => (
+            <Sales
+              key={dat}
+              name={ind.name}
+              email={ind.email}
+              amount={ind.amount}
+            />
+          ))}
         </div>
       </section>
     </div>

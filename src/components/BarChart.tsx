@@ -78,6 +78,7 @@ const BarChart = (props: Props) => {
             axisLine={false}
             stroke="#888888"
             fontSize={12}
+            tickFormatter={(value) => `$${value}`}
           />
           <Bar dataKey={"bar"} radius={[4, 4, 0, 0]} />
         </BarGraph>
