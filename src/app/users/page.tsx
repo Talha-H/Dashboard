@@ -1,4 +1,5 @@
-// "use client"
+/* eslint-disable @next/next/no-img-element */
+"use client";
 import { DataTable } from "@/components/DataTable";
 import PageTitle from "@/components/PageTitle";
 import { ColumnDef } from "@tanstack/react-table";
@@ -24,7 +25,7 @@ export const data: Payment[] = [
     paymentMethod: "Credit Card",
   },
   {
-    id: 2,
+    id: 1,
     name: "Alice Smith",
     email: "alice.smith@example.com",
     status: "Inactive",
@@ -32,7 +33,7 @@ export const data: Payment[] = [
     paymentMethod: "PayPal",
   },
   {
-    id: 3,
+    id: 1,
     name: "Bob Johnson",
     email: "bob.johnson@example.com",
     status: "Active",
@@ -40,7 +41,7 @@ export const data: Payment[] = [
     paymentMethod: "Bitcoin",
   },
   {
-    id: 4,
+    id: 1,
     name: "Emily Brown",
     email: "emily.brown@example.com",
     status: "Inactive",
@@ -48,7 +49,7 @@ export const data: Payment[] = [
     paymentMethod: "Venmo",
   },
   {
-    id: 5,
+    id: 1,
     name: "Michael Wilson",
     email: "michael.wilson@example.com",
     status: "Active",
@@ -56,7 +57,7 @@ export const data: Payment[] = [
     paymentMethod: "Debit Card",
   },
   {
-    id: 6,
+    id: 1,
     name: "Sophia Taylor",
     email: "sophia.taylor@example.com",
     status: "Inactive",
@@ -64,7 +65,7 @@ export const data: Payment[] = [
     paymentMethod: "Credit Card",
   },
   {
-    id: 7,
+    id: 1,
     name: "William Anderson",
     email: "william.anderson@example.com",
     status: "Active",
@@ -72,7 +73,7 @@ export const data: Payment[] = [
     paymentMethod: "PayPal",
   },
   {
-    id: 8,
+    id: 1,
     name: "Emma Martinez",
     email: "emma.martinez@example.com",
     status: "Inactive",
@@ -80,7 +81,7 @@ export const data: Payment[] = [
     paymentMethod: "Bitcoin",
   },
   {
-    id: 9,
+    id: 1,
     name: "Daniel Hernandez",
     email: "daniel.hernandez@example.com",
     status: "Active",
@@ -88,7 +89,7 @@ export const data: Payment[] = [
     paymentMethod: "Venmo",
   },
   {
-    id: 10,
+    id: 1,
     name: "Olivia Lopez",
     email: "olivia.lopez@example.com",
     status: "Inactive",
@@ -96,7 +97,7 @@ export const data: Payment[] = [
     paymentMethod: "Debit Card",
   },
   {
-    id: 11,
+    id: 1,
     name: "James Gonzalez",
     email: "james.gonzalez@example.com",
     status: "Active",
@@ -104,7 +105,7 @@ export const data: Payment[] = [
     paymentMethod: "Credit Card",
   },
   {
-    id: 12,
+    id: 1,
     name: "Ava Perez",
     email: "ava.perez@example.com",
     status: "Inactive",
@@ -112,7 +113,7 @@ export const data: Payment[] = [
     paymentMethod: "PayPal",
   },
   {
-    id: 13,
+    id: 1,
     name: "Logan Rodriguez",
     email: "logan.rodriguez@example.com",
     status: "Active",
@@ -120,7 +121,7 @@ export const data: Payment[] = [
     paymentMethod: "Bitcoin",
   },
   {
-    id: 14,
+    id: 1,
     name: "Mia Lee",
     email: "mia.lee@example.com",
     status: "Inactive",
@@ -128,7 +129,7 @@ export const data: Payment[] = [
     paymentMethod: "Venmo",
   },
   {
-    id: 15,
+    id: 1,
     name: "Benjamin Walker",
     email: "benjamin.walker@example.com",
     status: "Active",
@@ -136,7 +137,7 @@ export const data: Payment[] = [
     paymentMethod: "Debit Card",
   },
   {
-    id: 16,
+    id: 1,
     name: "Charlotte Hall",
     email: "charlotte.hall@example.com",
     status: "Inactive",
@@ -144,7 +145,7 @@ export const data: Payment[] = [
     paymentMethod: "Credit Card",
   },
   {
-    id: 17,
+    id: 1,
     name: "Elijah Young",
     email: "elijah.young@example.com",
     status: "Active",
@@ -152,7 +153,7 @@ export const data: Payment[] = [
     paymentMethod: "PayPal",
   },
   {
-    id: 18,
+    id: 1,
     name: "Harper Allen",
     email: "harper.allen@example.com",
     status: "Inactive",
@@ -160,7 +161,7 @@ export const data: Payment[] = [
     paymentMethod: "Bitcoin",
   },
   {
-    id: 19,
+    id: 1,
     name: "Amelia King",
     email: "amelia.king@example.com",
     status: "Active",
@@ -168,7 +169,7 @@ export const data: Payment[] = [
     paymentMethod: "Venmo",
   },
   {
-    id: 20,
+    id: 1,
     name: "Matthew Wright",
     email: "matthew.wright@example.com",
     status: "Inactive",
@@ -181,21 +182,20 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "name",
     header: "Name",
-    // cell: ({ row }) => {
-    //   return (
-    //     <div>
-    //       <Image
-    //         width={100}
-    //         height={100}
-    //         alt="img"
-    //         src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${row.getValue(
-    //           "name"
-    //         )}`}
-    //       />
-    //       <p>{row.getValue("name")}</p>
-    //     </div>
-    //   );
-    // },
+    cell: ({ row }) => {
+      return (
+        <div className="flex gap-2 items-center">
+          <img
+            className="h-10 w-10"
+            alt="img"
+            src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${row.getValue(
+              "name"
+            )}`}
+          />
+          <p>{row.getValue("name")}</p>
+        </div>
+      );
+    },
   },
   {
     accessorKey: "email",

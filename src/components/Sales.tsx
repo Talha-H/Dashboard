@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 import Image from "next/image";
 import React from "react";
@@ -13,7 +14,12 @@ const Sales = (props: SalesProps) => {
     <div className="flex justify-between gap-3 flex-wrap">
       <section className="flex justify-between items-center gap-3">
         <div className="w-12 h-12 rounded-xl p-1 bg-gray-100">
-          <Image width={200} height={200} alt="" src={""} />
+          <img
+            width={200}
+            height={200}
+            alt=""
+            src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${props.name}`}
+          />
         </div>
         <div>
           <p className="text-gray-700 font-bold text-lg">{props.name}</p>
