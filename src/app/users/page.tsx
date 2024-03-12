@@ -5,6 +5,7 @@ import PageTitle from "@/components/PageTitle";
 import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 import React from "react";
+type Props = {};
 
 type Payment = {
   id: number;
@@ -215,7 +216,7 @@ const columns: ColumnDef<Payment>[] = [
   },
 ];
 
-const page = (props: Payment) => {
+const page = (props: Props) => {
   return (
     <div className="flex flex-col gap-5 w-full">
       <PageTitle title="Users" />

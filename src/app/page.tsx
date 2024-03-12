@@ -99,14 +99,7 @@ export default function Home() {
       </section>
 
       <section>
-        <Users
-          id={0}
-          amount={0}
-          status={"Active"}
-          email={""}
-          name={""}
-          paymentMethod={""}
-        />
+        <Users />
       </section>
     </div>
   );

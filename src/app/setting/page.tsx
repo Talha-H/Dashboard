@@ -4,6 +4,7 @@ import { DataTable } from "@/components/DataTable";
 import PageTitle from "@/components/PageTitle";
 import { ColumnDef } from "@tanstack/react-table";
 import React from "react";
+type Props = {};
 
 type Payment = {
   Category: string;
@@ -40,7 +41,7 @@ const columns: ColumnDef<Payment>[] = [
   },
 ];
 
-const page = (props: Payment) => {
+const page = (props: Props) => {
   return (
     <div className="flex flex-col gap-5 w-full">
       <PageTitle title="Setting" />

@@ -6,101 +6,103 @@ import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
 import React from "react";
 
+type Props = {};
+
 type Payment = {
-  Status: "Completed" | "Pending" | "Processing";
+  Status: string;
   LastOrder: string;
   PaymentMethod: string;
-  Order: number;
+  Order: string;
 };
 
 const data: Payment[] = [
   {
-    Order: 1,
+    Order: "1",
     Status: "Completed",
     LastOrder: "2024-03-10",
     PaymentMethod: "Credit Card",
   },
   {
-    Order: 2,
+    Order: "2",
     Status: "Pending",
     LastOrder: "2024-03-09",
     PaymentMethod: "PayPal",
   },
   {
-    Order: 3,
+    Order: "3",
     Status: "Processing",
     LastOrder: "2024-03-08",
     PaymentMethod: "Debit Card",
   },
   {
-    Order: 4,
+    Order: "4",
     Status: "Pending",
     LastOrder: "2024-03-07",
     PaymentMethod: "Bank Transfer",
   },
   {
-    Order: 5,
+    Order: "5",
     Status: "Processing",
     LastOrder: "2024-03-06",
     PaymentMethod: "Credit Card",
   },
   {
-    Order: 6,
+    Order: "6",
     Status: "Completed",
     LastOrder: "2024-03-05",
     PaymentMethod: "PayPal",
   },
   {
-    Order: 7,
+    Order: "7",
     Status: "Processing",
     LastOrder: "2024-03-04",
     PaymentMethod: "Debit Card",
   },
   {
-    Order: 8,
+    Order: "8",
     Status: "Pending",
     LastOrder: "2024-03-03",
     PaymentMethod: "Bank Transfer",
   },
   {
-    Order: 9,
+    Order: "9",
     Status: "Processing",
     LastOrder: "2024-03-02",
     PaymentMethod: "Credit Card",
   },
   {
-    Order: 10,
+    Order: "10",
     Status: "Pending",
     LastOrder: "2024-03-01",
     PaymentMethod: "PayPal",
   },
 
   {
-    Order: 11,
+    Order: "11",
     Status: "Completed",
     LastOrder: "2024-03-15",
     PaymentMethod: "Credit Card",
   },
   {
-    Order: 12,
+    Order: "12",
     Status: "Pending",
     LastOrder: "2024-03-14",
     PaymentMethod: "Venmo",
   },
   {
-    Order: 13,
+    Order: "13",
     Status: "Processing",
     LastOrder: "2024-03-13",
     PaymentMethod: "Debit Card",
   },
   {
-    Order: 14,
+    Order: "14",
     Status: "Pending",
     LastOrder: "2024-03-12",
     PaymentMethod: "Cash",
   },
   {
-    Order: 15,
+    Order: "15",
     Status: "Processing",
     LastOrder: "2024-03-11",
     PaymentMethod: "Apple Pay",
@@ -135,17 +137,15 @@ const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: "PaymentMethod",
-    header: "Method",
+    header: "Payment Method",
   },
 ];
 
-const page = (props: Payment) => {
+export default function page({}: Props) {
   return (
     <div className="flex flex-col gap-5 w-full">
       <PageTitle title="Users" />
       <DataTable data={data} columns={columns} />
     </div>
   );
-};
-
-export default page;
+}
