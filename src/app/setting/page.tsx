@@ -2,7 +2,6 @@
 "use client";
 import { DataTable } from "@/components/DataTable";
 import PageTitle from "@/components/PageTitle";
-import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
 import React from "react";
 
@@ -11,7 +10,7 @@ type Payment = {
   Value: string;
 };
 
-export const data: Payment[] = [
+const data: Payment[] = [
   {
     Category: "Account",
     Value: "Profile Settings",
@@ -30,7 +29,7 @@ export const data: Payment[] = [
   },
 ];
 
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "Category",
     header: "Category",

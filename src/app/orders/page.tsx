@@ -13,7 +13,7 @@ type Payment = {
   Order: number;
 };
 
-export const data: Payment[] = [
+const data: Payment[] = [
   {
     Order: 1,
     Status: "Completed",
@@ -107,7 +107,7 @@ export const data: Payment[] = [
   },
 ];
 
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "Order",
     header: "Order",
