@@ -4,6 +4,7 @@ import Card, { CardProps } from "@/components/Card";
 import { Activity, CreditCard, DollarSignIcon, User } from "lucide-react";
 import BarChart from "@/components/BarChart";
 import Sales, { SalesProps } from "@/components/Sales";
+import Users from "@/app/users/page";
 
 const cardData: CardProps[] = [
   {
@@ -95,6 +96,17 @@ export default function Home() {
             />
           ))}
         </div>
+      </section>
+
+      <section>
+        <Users
+          id={0}
+          amount={0}
+          status={"Active"}
+          email={""}
+          name={""}
+          paymentMethod={""}
+        />
       </section>
     </div>
   );

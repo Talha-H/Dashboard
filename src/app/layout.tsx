@@ -20,16 +20,18 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen w-full bg-white text-black flex",
+          "min-h-screen w-full bg-white text-black flex relative",
           inter.className,
           {
             "debug-screens": process.env.NODE_ENV === "development",
           }
         )}
       >
-        {/* SideBar */}
-        <div className="border">
-          <SideBar />
+        <div className="relative border-r">
+          {/* SideBar */}
+          <div className="  sticky top-4 xl:right-[20px]">
+            <SideBar />
+          </div>
         </div>
         {/* Main Page */}
         <div className="p-8 w-full">{children}</div>
